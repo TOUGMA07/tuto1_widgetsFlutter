@@ -14,10 +14,15 @@ const HomePage({super.key});
     return  Scaffold(
       appBar: AppBar(
         title: Text("Appli"),
+        elevation: 12,
       ),
       body: Center(
         child: Text("Bonjour tout le monde!"),
+        
       ),
+      floatingActionButton: FloatingActionButton
+      (onPressed: (){},
+      child: Icon(Icons.add),),
     );
   }
 }
