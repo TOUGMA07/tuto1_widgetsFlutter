@@ -6,23 +6,38 @@ void main(){
   ));
 }
 
-class HomePage extends StatelessWidget{
-const HomePage({super.key});
+class HomePage extends StatefulWidget{
+  const HomePage({super.key});
+
+  @override
+  State<HomePage> createState(){
+    return HomePageState();
+  }
+}
+
+class HomePageState extends State<HomePage>{
+
+int counter = 0;
 
   @override  
   Widget build(BuildContext context){
     return  Scaffold(
       appBar: AppBar(
-        title: Text("Appli"),
+        title: const Text("Appli"),
         elevation: 12,
       ),
       body: Center(
-        child: Text("Bonjour tout le monde!"),
+        child:  Text("Bonjour tout le monde! $counter "),
         
       ),
       floatingActionButton: FloatingActionButton
-      (onPressed: (){},
-      child: Icon(Icons.add),),
+      (onPressed: (){
+        setState(() {
+          counter += 1;
+        });
+        
+      },
+      child: const Icon(Icons.add),),
     );
   }
 }
