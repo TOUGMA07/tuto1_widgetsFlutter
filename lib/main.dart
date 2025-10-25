@@ -21,22 +21,19 @@ class HomePageState extends State<HomePage>{
   Widget build(BuildContext context){
     return  Scaffold(
       appBar: AppBar(
-        title: const Text("Container"),
+        title: const Text("Column"),
         elevation: 12,
       ),
-      body: Container (
-        child:  Text("Bonjour "),
-        padding: const EdgeInsets.all(20),
-        margin:  const EdgeInsets.all(20),
-        height: 200,
-        width: 400,
-        alignment: Alignment.topLeft,
-        decoration: BoxDecoration(
-          color: Colors.blue,
-          borderRadius: BorderRadius.circular(10),
-        ),
-        
-      ),
-    );
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text("France Fleurs"),
+          Text("Brassée de fleurs fraîches Amour"),
+          Image.network("https://www.francefleurs.com/17621-large_default/brassee-de-fleurs-fraiches-amour.webp"),
+          Text("Youtuber"),
+        ],
+      )  
+      );
   }
 }
