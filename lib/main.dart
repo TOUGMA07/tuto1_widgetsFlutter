@@ -17,27 +17,26 @@ class HomePage extends StatefulWidget{
 
 class HomePageState extends State<HomePage>{
 
-int counter = 0;
-
   @override  
   Widget build(BuildContext context){
     return  Scaffold(
       appBar: AppBar(
-        title: const Text("Appli"),
+        title: const Text("Container"),
         elevation: 12,
       ),
-      body: Center(
-        child:  Text("Bonjour tout le monde! $counter "),
+      body: Container (
+        child:  Text("Bonjour "),
+        padding: const EdgeInsets.all(20),
+        margin:  const EdgeInsets.all(20),
+        height: 200,
+        width: 400,
+        alignment: Alignment.topLeft,
+        decoration: BoxDecoration(
+          color: Colors.blue,
+          borderRadius: BorderRadius.circular(10),
+        ),
         
       ),
-      floatingActionButton: FloatingActionButton
-      (onPressed: (){
-        setState(() {
-          counter += 1;
-        });
-        
-      },
-      child: const Icon(Icons.add),),
     );
   }
 }
